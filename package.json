@@ -1,0 +1,22 @@
+{
+  "name": "recruitment-and-applicant-tracking-system",
+  "version": "1.0.0",
+  "description": "Full-Stack Recruitment and Applicant Tracking System with ATS Resume Score Detector",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix frontend install",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run dev",
+    "server": "cd backend && mvn spring-boot:run"
+  },
+  "keywords": [
+    "recruitment",
+    "ats",
+    "applicant-tracking-system",
+    "spring-boot",
+    "react"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

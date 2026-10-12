@@ -4,9 +4,10 @@
   "description": "Full-Stack Recruitment and Applicant Tracking System with ATS Resume Score Detector",
   "private": true,
   "scripts": {
+    "postinstall": "npm --prefix frontend install",
     "install:all": "npm --prefix frontend install",
     "dev": "npm --prefix frontend run dev",
-    "build": "npm --prefix frontend run build",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
     "start": "npm --prefix frontend run dev",
     "server": "cd backend && mvn spring-boot:run"
   },

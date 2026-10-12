@@ -359,9 +359,18 @@ This starts both the MySQL 8.0 container and the multi-stage compiled Spring Boo
 4. Set `PORT=8080`.
 5. Deploy service.
 
-#### Frontend Deployment (Vercel / Netlify / Unified):
-- **Unified Deployment**: The backend `Dockerfile` automatically builds the React SPA and packages it into `src/main/resources/static/`. Deploying the backend automatically serves the full frontend.
-- **Standalone Frontend**: Point Vercel or Netlify to `frontend/`, set build command `npm run build`, output directory `dist`, and set `VITE_API_URL` to your backend HTTPS URL.
+#### Frontend Deployment on Vercel:
+The project is configured to deploy to Vercel in either of two ways:
+
+- **Option 1: Deploy from Repository Root (Default)**
+  - In Vercel Project Settings, leave **Root Directory** as `./` (default).
+  - Vercel automatically detects [`vercel.json`](file:///c:/Users/umare/OneDrive/Desktop/palak/vercel.json), runs `cd frontend && npm install && npm run build`, outputs to `frontend/dist`, and applies SPA rewrites for `/index.html`.
+  - Add an environment variable in Vercel: `VITE_API_BASE_URL=https://your-backend-url.onrender.com/api` (or your deployed backend URL).
+
+- **Option 2: Deploy with Root Directory set to `frontend`**
+  - In Vercel Project Settings > General, set **Root Directory** to `frontend`.
+  - Vercel uses [`frontend/vercel.json`](file:///c:/Users/umare/OneDrive/Desktop/palak/frontend/vercel.json) with framework preset **Vite**, build command `npm run build`, output directory `dist`.
+  - Add environment variable: `VITE_API_BASE_URL=https://your-backend-url.onrender.com/api`.
 
 ---
 

@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+frontend/node_modules
+frontend/dist
+backend/target
+.git
+.gitignore
+.vscode
+scratch
+uploads/resumes/*
+!uploads/resumes/.gitkeep
